@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "382376958676",
+    "project_id": "projeto-paf",
+    "storage_bucket": "projeto-paf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382376958676:android:b0af02350fa85977083941",
+        "android_client_info": {
+          "package_name": "com.example.RuasSaudaveis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382376958676-4k5qfjjrhfnqko728fplsc04ct3amuc9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.RuasSaudaveis",
+            "certificate_hash": "358b4f1bad562dd1b8ea84a601dcafb75e7087bd"
+          }
+        },
+        {
+          "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyComUxbwRumJpj0IOeHDFS_1abIqNM3PM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382376958676-2desclsifeb451em3t7c7bu4s8c1at1b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.RuasSaudaveis.paf"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382376958676:android:8a8e110b492bd09b083941",
+        "android_client_info": {
+          "package_name": "com.example.RuasSaudaveis.paf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyComUxbwRumJpj0IOeHDFS_1abIqNM3PM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382376958676-2desclsifeb451em3t7c7bu4s8c1at1b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.RuasSaudaveis.paf"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382376958676:android:8f7ec8e267cf274b083941",
+        "android_client_info": {
+          "package_name": "com.example.teste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyComUxbwRumJpj0IOeHDFS_1abIqNM3PM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382376958676-8v0gsij1m4drtl0v2on9icejl2rcpv70.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382376958676-2desclsifeb451em3t7c7bu4s8c1at1b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.RuasSaudaveis.paf"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
