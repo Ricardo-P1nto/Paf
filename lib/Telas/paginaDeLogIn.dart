@@ -145,7 +145,7 @@ class _PaginadeloginState extends State<Paginadelogin> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => const PaginaDeInicio(),
+                                            builder: (context) => const EscolhaLogInSignIn(),
                                           ),
                                         );
                                       },

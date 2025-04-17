@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'PaginaDeLogIn.dart';
 import 'paginaRegistar.dart';
 
-class PaginaDeInicio extends StatefulWidget {
-  const PaginaDeInicio({super.key});
+class EscolhaLogInSignIn extends StatefulWidget {
+  const EscolhaLogInSignIn({super.key});
 
   @override
-  State<PaginaDeInicio> createState() => _PaginaDeInicioState();
+  State<EscolhaLogInSignIn> createState() => _EscolhaLogInSignInState();
 }
 
-class _PaginaDeInicioState extends State<PaginaDeInicio> {
+class _EscolhaLogInSignInState extends State<EscolhaLogInSignIn> {
   @override
   Widget build(BuildContext context) {
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
@@ -101,7 +101,9 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
                                     ),
                                   ),
                                 ),
+
                                 const SizedBox(width: 20),
+
                                 Expanded(
                                   child: GestureDetector(
                                     onTap: () {

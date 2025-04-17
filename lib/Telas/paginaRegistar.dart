@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:teste/Telas/TelaCompletarPerfil.dart';
 import 'package:teste/Telas/paginaPrincipal.dart';
 import '../Comun/meu_snackbar.dart';
 import '../servicos/autenticacao_servico.dart';
@@ -180,7 +181,9 @@ class _PaginaRegistarState extends State<PaginaRegistar> {
                                   ],
                                 ),
                               ),
+
                               const SizedBox(height: 30),
+
                               Row(
                                 children: [
                                   Expanded(
@@ -190,7 +193,7 @@ class _PaginaRegistarState extends State<PaginaRegistar> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                            const PaginaDeInicio(),
+                                            const EscolhaLogInSignIn(),
                                           ),
                                         );
                                       },
@@ -241,46 +244,10 @@ class _PaginaRegistarState extends State<PaginaRegistar> {
                                       ),
                                     ),
                                   ),
-
-                                  /*Expanded(
-
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        if (_formKey.currentState?.validate() ?? false) {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => const RegistarPasso2(),
-                                            ),
-                                          );
-                                        }
-                                      },
-
-                                      child: Container(
-                                        height: 50,
-
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(50),
-                                          color: Colors.blueGrey,
-                                        ),
-
-                                        child: const Center(
-                                          child: Text(
-                                            "Seguinte",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-
-                                    ),
-
-                                  ),*/
                                 ],
                               ),
                               const SizedBox(height: 30),
+
                               const Text(
                                 "Criar conta com outras plataformas",
                                 style: TextStyle(color: Colors.grey),
@@ -384,13 +351,19 @@ class _PaginaRegistarState extends State<PaginaRegistar> {
         }
 
         _autenServico.cadastrarUsuario(
-            email: email, senha: senha, context: context).then(
-              (String? erro) {
-            if (erro != null) {
-              mostarSnackBar(context: context, mensagem: erro);
-            }
-          },
-        );
+          email: email,
+          senha: senha,
+          context: context,
+        ).then((String? erro) {
+          if (erro != null) {
+            mostarSnackBar(context: context, mensagem: erro);
+          } else {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const TelaCompletarPerfil()),
+            );
+          }
+        });
       }
     } else {
       if (kDebugMode) {

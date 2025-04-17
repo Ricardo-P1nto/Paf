@@ -63,7 +63,7 @@ class AutenticacaoServico {
       if (context.mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const PaginaDeInicio()),
+          MaterialPageRoute(builder: (context) => const EscolhaLogInSignIn()),
         );
       }
     } catch (e) {

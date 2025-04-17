@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 class PaginaCommingSoon extends StatelessWidget {
-  const PaginaCommingSoon({super.key});
+  final String appTitle; // Parâmetro que será recebido
+
+  const PaginaCommingSoon({
+    super.key,
+    required this.appTitle, // Torna o parâmetro obrigatório
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Comming Soon'),
+        title: Text(appTitle), // Usa o parâmetro recebido como título
       ),
-
-      //Esta pagina so vai dizer comming soon
 
       body: const Center(
         child: Text(
@@ -21,14 +24,3 @@ class PaginaCommingSoon extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-

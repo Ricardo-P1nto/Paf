@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'TelasDoNavigationBarItem/PaginaDasMinhasDenuncias.dart';
-import 'TelasDoNavigationBarItem/paginaConfiguracoes.dart';
-import 'TelasDoNavigationBarItem/paginaDasDenuncias.dart';
+import 'TelasDoAPP/PaginaDasMinhasDenuncias.dart';
+import 'TelasDoAPP/paginaConfiguracoes.dart';
+import 'TelasDoAPP/paginaDasDenuncias.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({super.key});
@@ -13,12 +13,26 @@ class PaginaPrincipal extends StatefulWidget {
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   int _selectedIndex = 0;
 
-  final List<String> _titles = [
-    'Pagina Principal',
-    'Denuncias',
-    'Minhas Denuncias', 
+  // Lista de títulos correspondentes a cada item do navigation bar
+  static const List<String> _titles = [
+    'Denúncias',
+    'Minhas Denúncias',
     'Definições'
   ];
+
+  // Método que retorna a página com base no índice
+  Widget _getPage(int index) {
+    switch (index) {
+      case 0:
+        return paginaDasDenuncias();
+      case 1:
+        return paginaDasMinhasDenuncias();
+      case 2:
+        return PaginaConfiguracoes();
+      default:
+        return paginaDasDenuncias();
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -36,29 +50,18 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
         backgroundColor: Colors.white60,
       ),
 
-      body: Center(
-        child: _selectedIndex == 0
-            ? const Text('Home Page')
-            : _selectedIndex == 1
-            ? paginaDasDenuncias()
-            : _selectedIndex == 2
-            ? paginaDasMinhasDenuncias()
-            : PaginaConfiguracoes(),
-      ),
+      body: _getPage(_selectedIndex), // Chama o método para obter a página correta
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Denuncias',
+            label: 'Denúncias',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_balance_sharp),
-            label: 'Minhas Denuncias',
+            label: 'Minhas Denúncias',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

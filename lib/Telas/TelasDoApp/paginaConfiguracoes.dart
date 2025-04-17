@@ -20,7 +20,7 @@ class PaginaConfiguracoes extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PaginaCommingSoon()),
+                MaterialPageRoute(builder: (context) => const PaginaCommingSoon(appTitle: 'Perfil',)),
               );
             },
           ),
@@ -30,7 +30,7 @@ class PaginaConfiguracoes extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PaginaCommingSoon()),
+                MaterialPageRoute(builder: (context) => const PaginaCommingSoon(appTitle: 'Notificações',)),
               );
             },
           ),
@@ -40,7 +40,7 @@ class PaginaConfiguracoes extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PaginaCommingSoon()),
+                MaterialPageRoute(builder: (context) => const PaginaCommingSoon(appTitle: 'Privacidade',)),
               );
             },
           ),
@@ -50,7 +50,7 @@ class PaginaConfiguracoes extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PaginaCommingSoon()),
+                MaterialPageRoute(builder: (context) => const PaginaCommingSoon(appTitle: 'Idioma',)),
               );
             },
           ),
@@ -60,7 +60,7 @@ class PaginaConfiguracoes extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PaginaCommingSoon()),
+                MaterialPageRoute(builder: (context) => const PaginaCommingSoon(appTitle: 'Ajuda',)),
               );
             },
           ),

@@ -2,17 +2,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../firebase_options.dart';
 import 'Telas/Tela_LoginOuSignin.dart';
 import 'Telas/paginaPrincipal.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+  await Firebase.initializeApp();
+  await FirebaseAppCheck.instance.activate(
+    androidProvider: AndroidProvider.debug,
+    appleProvider: AppleProvider.appAttest,
   );
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -48,7 +50,7 @@ class RoteadorTela extends StatelessWidget {
           if (kDebugMode) {
             print("Deveria ir para a Paginadelogin!");
           }
-          return const PaginaDeInicio();
+          return const EscolhaLogInSignIn();
         }
       },
     );
