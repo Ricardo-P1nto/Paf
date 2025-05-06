@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="teste"
+        android:label="Ruas Saudáveis"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

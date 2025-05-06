@@ -9,18 +9,13 @@ class AutenticacaoServico {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   //Cadastrar usuário
-  Future<String?> cadastrarUsuario({required String email, required String senha, required BuildContext context}) async {
+  // Retorna UserCredential em caso de sucesso, String com mensagem de erro em caso de falha
+  Future<dynamic> cadastrarUsuario({required String email, required String senha}) async {
     try {
       UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: senha);
-      await userCredential.user!.updateDisplayName(email);
-
-      // 🔥 Força a navegação para a Página Principal após o cadastro
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => PaginaPrincipal()),
-      );
-
-      return null;
+      // Não atualiza o nome de exibição aqui, será feito na TelaCompletarPerfil
+      // Não faz navegação aqui
+      return userCredential; // Retorna UserCredential em caso de sucesso
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
         print("Erro ao cadastrar: ${e.code}");
@@ -28,7 +23,12 @@ class AutenticacaoServico {
       if (e.code == "email-already-in-use") {
         return "Este email já está em uso";
       }
-      return "Erro desconhecido";
+      return e.message ?? "Erro desconhecido ao cadastrar"; // Retorna mensagem de erro
+    } catch (e) {
+      if (kDebugMode) {
+        print("Erro inesperado ao cadastrar: $e");
+      }
+      return "Erro inesperado ao cadastrar"; // Retorna mensagem de erro genérica
     }
   }
 

@@ -342,29 +342,13 @@ class _PaginaRegistarState extends State<PaginaRegistar> {
     String senha = _senhacontroller.text;
 
     if (_formKey.currentState!.validate()) {
-      if (queroEntrar) {
-        if (kDebugMode) {
-          print("Cadastro validado");
-        }
-        if (kDebugMode) {
-          print("Email: $email, Senha: $senha");
-        }
-
-        _autenServico.cadastrarUsuario(
-          email: email,
-          senha: senha,
-          context: context,
-        ).then((String? erro) {
-          if (erro != null) {
-            mostarSnackBar(context: context, mensagem: erro);
-          } else {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const TelaCompletarPerfil()),
-            );
-          }
-        });
-      }
+      // Navega para a tela de completar perfil, passando email e senha
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TelaCompletarPerfil(email: email, senha: senha),
+        ),
+      );
     } else {
       if (kDebugMode) {
         print("Formulário inválido");
